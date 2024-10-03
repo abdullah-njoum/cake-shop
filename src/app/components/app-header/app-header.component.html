@@ -1,0 +1,89 @@
+<header  (mouseleave)="hideTemplate()">
+    <div class="icon">
+        <img src="assets/icons/cake-icon.avif" alt="Cake Logo" />
+    </div>
+    @if (!mobileView) {
+    <nav class="nav">
+        <ul>
+            <li><a>Home</a></li>
+            <li class="expandible-li" (mouseenter)="showTemplate('shopTemplate')">
+                <a>Shop</a>
+                <div class="shop-container" 
+                    *ngIf="activeTemplate === 'shopTemplate'" 
+                    (mouseenter)="showTemplate('shopTemplate')"
+                    (mouseleave)="hideTemplate()">
+                    <ng-container *ngTemplateOutlet="shopTemplateRef"></ng-container>
+                </div>
+            </li>
+            <li class="expandible-li" (mouseenter)="showTemplate('recipesTemplate')">
+                <a>Recipes</a>
+                <div class="recipes-container" 
+                *ngIf="activeTemplate === 'recipesTemplate'" 
+                (mouseenter)="showTemplate('recipesTemplate')"
+                (mouseleave)="hideTemplate()">
+                    <ng-container *ngTemplateOutlet="recipesTemplateRef"></ng-container>
+                </div>
+            </li>
+            <li><a>Flavours</a></li>
+            <li><a>Blog</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
+    } @else {
+        <div class="menu-button" (click)="toggleMenu()">
+            <button>Menu</button>
+            <span><fa-icon [icon]="menuIcon"></fa-icon></span>
+        </div>
+    }
+    <div class="functions">
+        <ul>
+            <li><a><fa-icon [icon]="userProfileIcon"></fa-icon></a></li>
+            <li><a><fa-icon class="cartIcon" [icon]="cartShoppingIcon"></fa-icon></a></li>
+            <li><a><fa-icon [icon]="searchIcon"></fa-icon></a></li>
+            <li>
+                <select class="currency" name="currency" id="currency">
+                    <option value="USD">USD</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<ng-template #shopTemplateRef>
+    <div class="category">
+        <div class="category-title">Flavours</div>
+        <div>Banana Cream Pie</div>
+        <div>Candy Cane</div>
+        <div>Caramel Apple</div>
+        <div>Chocolate Criz</div>
+        <div>Coconut Harr</div>
+    </div>
+    <div class="category">
+        <div class="category-title">Sugar Free Cakes</div>
+        <div>Carrot Cake</div>
+        <div>Gingerbread Cake</div>
+        <div>Banana Snack Cake</div>
+        <div>Chocolate Cacao Free</div>
+        <div>Coconut Milk Harr</div>
+    </div>
+    <div class="category">
+        <div class="category-title">Wedding Cakes</div>
+        <div>Banana Cream Pie</div>
+        <div>Candy Cane</div>
+        <div>Caramel Apple</div>
+        <div>Chocolate Criz</div>
+        <div>Coconut Harr</div>
+    </div>
+    <div class="category">
+        <img src="/assets/images/shop-image.jpg" alt="Coffee and Cake" />
+    </div>
+</ng-template>
+
+<ng-template #recipesTemplateRef>
+    @for(recipe of recipes; track recipe; let i = $index) {
+    <div class="recipe-container">
+        <img [src]="recipe.imgSrc" [alt]="'recipe' + i" />
+        <button>{{ recipe.name }} - {{ recipe.price }}</button>
+    </div>
+    }
+</ng-template>

@@ -1,0 +1,65 @@
+<div class="icons-panel">
+    <span (click)="switchTemplate()" class="icon-back"><a><fa-icon [icon]="backIcon"></fa-icon></a></span>
+    <span (click)="sideBarClosed.emit(true)" class="icon-close"><a><fa-icon [icon]="xIcon"></fa-icon></a></span>
+</div>
+<nav class="nav">
+    <ul>
+        <li><a>Home</a></li>
+        <li class="expandible-li" (click)="switchTemplate('shopTemplate')">
+            <a>Shop</a>
+            <div class="shop-container" *ngIf="activeTemplate === 'shopTemplate'">
+                <ng-container *ngTemplateOutlet="shopTemplateRef"></ng-container>
+            </div>
+        </li>
+        <li class="expandible-li" (click)="switchTemplate('recipesTemplate')">
+            <a>Recipes</a>
+            <div class="recipes-container" *ngIf="activeTemplate === 'recipesTemplate'">
+                <ng-container *ngTemplateOutlet="recipesTemplateRef"></ng-container>
+            </div>
+        </li>
+        <li><a>Flavours</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Contact</a></li>
+    </ul>
+</nav>
+
+<ng-template #shopTemplateRef>
+    <div class="container-title">Shop</div>
+    <div class="category">
+        <div class="category-title">Flavours</div>
+        <div>Banana Cream Pie</div>
+        <div>Candy Cane</div>
+        <div>Caramel Apple</div>
+        <div>Chocolate Criz</div>
+        <div>Coconut Harr</div>
+    </div>
+    <div class="category">
+        <div class="category-title">Sugar Free Cakes</div>
+        <div>Carrot Cake</div>
+        <div>Gingerbread Cake</div>
+        <div>Banana Snack Cake</div>
+        <div>Chocolate Cacao Free</div>
+        <div>Coconut Milk Harr</div>
+    </div>
+    <div class="category">
+        <div class="category-title">Wedding Cakes</div>
+        <div>Banana Cream Pie</div>
+        <div>Candy Cane</div>
+        <div>Caramel Apple</div>
+        <div>Chocolate Criz</div>
+        <div>Coconut Harr</div>
+    </div>
+    <div class="category">
+        <img src="/assets/images/shop-image.jpg" alt="Coffee and Cake" />
+    </div>
+</ng-template>
+
+<ng-template #recipesTemplateRef>
+    <div class="container-title">Recipes</div>
+    @for(recipe of recipes; track recipe; let i = $index) {
+    <div class="recipe-container">
+        <img [src]="recipe.imgSrc" [alt]="'recipe' + i" />
+        <button>{{ recipe.name }} - {{ recipe.price }}</button>
+    </div>
+    }
+</ng-template>

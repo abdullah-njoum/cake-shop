@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #a7dfef;
+    padding: 5rem 1rem;
+    margin-top: 1rem;
+    --mask: radial-gradient(22px at 50% 22px,#0000 97%,#000) 50% -22px/ 40.7px 100%;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+    
+    h1 {
+        text-transform: uppercase;
+        font-family: 'Marck Script', cursive;
+        font-weight: 400;
+    }
+    div {
+        font-size: .9rem;
+    }
+}
