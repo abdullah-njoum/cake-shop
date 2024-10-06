@@ -3,7 +3,9 @@ import { Component, HostListener, OnInit, output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { MOBILE_WIDTH, RECIPE_IMAGES_PATH } from '../../shared/utils/constants';
+import { MOBILE_WIDTH } from '../../shared/utils/constants';
+import { NavigationService } from '../../shared/services/navigation.service';
+import { Recipe } from '../../shared/models/recipe.model';
 
 
 @Component({
@@ -21,9 +23,11 @@ export class AppHeaderComponent implements OnInit {
   searchIcon = faSearch;
   menuIcon = faBars;
   activeTemplate: string | null = null;
-  recipes: { name: string; price: number; imgSrc: string }[] = [];
+  recipes: Recipe[] = [];
   mobileView: boolean = false;
   menuOpened: boolean = false;
+  categoriesData: Record<string, string[]> = {};
+  categories: string[] = [];
 
   @HostListener('window:resize')
   onResize() {
@@ -32,7 +36,9 @@ export class AppHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.mobileView = window.innerWidth <= MOBILE_WIDTH;
-    this.recipes = this.getRecipes();
+    this.recipes = this.navigationService.getRecipes();
+    this.categoriesData = this.navigationService.getShopData() as Record<string, string[]>;
+    this.categories = Object.keys(this.categoriesData).map(key => key);
   }
 
   showTemplate(name: string): void {
@@ -48,28 +54,5 @@ export class AppHeaderComponent implements OnInit {
     this.menuOpenedEmitter.emit(this.menuOpened);
   }
 
-  private getRecipes() {
-    return [
-      {
-        name: 'Giant Cup Cake',
-        price: 300,
-        imgSrc: `${RECIPE_IMAGES_PATH}/recipe-1.jpg`
-      },
-      {
-        name: 'Choclate Cake',
-        price: 150,
-        imgSrc: `${RECIPE_IMAGES_PATH}/recipe-2.jpg`
-      },
-      {
-        name: 'Banana Cake',
-        price: 120,
-        imgSrc: `${RECIPE_IMAGES_PATH}/recipe-3.jpg`
-      },
-      {
-        name: 'Special Gift Cake',
-        price: 75,
-        imgSrc: `${RECIPE_IMAGES_PATH}/recipe-4.jpg`
-      }
-    ];
-  }
+  constructor(private readonly navigationService: NavigationService) {}
 }

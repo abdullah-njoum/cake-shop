@@ -1,4 +1,5 @@
 <div class="container">
-    <h1>Collection</h1>
-    <div>Home / Products</div>
+    <span class="icon-container prev" (click)="prevClick()"><fa-icon [icon]="prevIcon"></fa-icon></span>
+    <div class="image-wrapper"><img [src]="imgSrc"/></div>
+    <span class="icon-container next" (click)="nextClick()"><fa-icon [icon]="nextIcon"></fa-icon></span>
 </div>
