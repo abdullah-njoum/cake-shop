@@ -1,0 +1,42 @@
+@import 'variables';
+
+.container {
+    margin-top: -1.8rem;
+    position: relative;
+    width: 100%;
+    image-wrapper {
+        width: 100%;
+    }
+    img {
+        max-width: 100%;
+        position: relative;
+        --mask: radial-gradient(26px at top,#0000 97%,#000) 50% / 48.1px 100%;
+        -webkit-mask: var(--mask);
+                mask: var(--mask);
+    }
+    .icon-container {
+        background-color: $watermelon;
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        padding: $button-padding;
+        border: 1px solid $watermelon;
+        border-radius: .2rem;
+        cursor: pointer;
+    } 
+    .next {
+        right: 0;
+        transform: translate(-30%, 50%);
+        border: none;
+        @include button-hover;
+    }
+    .prev {
+        left: 0;
+        transform: translate(30%, 50%);
+        border: none;
+        @include button-hover;
+    }
+    fa-icon {
+        color: white;
+    }
+}

@@ -1,0 +1,143 @@
+@import 'variables';
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5rem 15rem 5rem 15rem;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    --mask: radial-gradient(26px at bottom,#0000 97%,#000) 50% / 48.1px 100%;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+    .title {
+        font-family: "Marck Script", cursive;
+        font-size: 2.5rem;
+        text-align: center;
+        color: $watermelon;
+        text-transform: capitalize;
+    }
+    .title-img {
+        margin-bottom: 3rem;
+    }
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+        gap: 3rem;
+        .categories-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 3rem;
+            align-items: flex-start;
+            .img-wrapper {
+                position: relative;
+                .bg-img {
+                    max-width: 100%;
+                }
+                .icon-img {
+                    max-width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            [class*="selected-category"] {
+                background-color: $babyblue;
+                border-radius: 50%;
+                border: .5rem solid $babyblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        app-layer-cake-card {
+            position: relative;
+            width: 70%;
+            &::before{
+                content: '';
+                position: absolute;
+                left: -4rem;
+                top:0;
+                width: 2px;
+                height: 100%;
+                background-color: $babyblue;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                left: calc(-0.5 * 1.5rem - 4rem);
+                width: 1.5rem;
+                aspect-ratio: 1 / 1;
+                top: 8%;
+                background-color: white;
+                border-right: 2px solid $babyblue;
+                border-top: 2px solid $babyblue;
+                z-index: 1;
+                transform: rotate(45deg);
+            }
+            &.selected-category-1 {
+                &::after {
+                    top: 8%;
+                }
+            }
+            &.selected-category-2 {
+                &::after {
+                    top: 34%;
+                }
+            }
+            &.selected-category-3 {
+                &::after {
+                    top: 61%;
+                }
+            }
+            &.selected-category-4 {
+                &::after {
+                    top: 88%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        .content {
+            flex-direction: column;
+            .categories-container {
+                flex-direction: row;
+                gap: 1rem;
+            }
+            app-layer-cake-card {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .content {
+            flex-direction: column;
+            .categories-container {
+                flex-direction: row;
+                gap: 1rem;
+                .img-wrapper {
+                    flex: 1 1 45%;
+                }
+            }
+            app-layer-cake-card {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

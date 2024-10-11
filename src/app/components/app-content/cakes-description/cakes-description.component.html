@@ -1,0 +1,12 @@
+<div class="container">
+  @for(cakeDesc of cakesDesc; track cakeDesc; let i=$index) {
+      <div class="cake-category">
+          <div class="img-container">
+              <img class="img-wrapper" [src]="cakeIconWrapper" alt="Cake Icon" loading="lazy"/>
+              <img class="img" [src]="cakeDesc.iconSrc" [alt]="'Image for Cake' + (i+ 1)" loading="lazy"/>
+          </div>
+          <span class="cake-title">{{ cakeDesc.title }}</span>
+          <span class="cake-desc">{{ cakeDesc.description }}</span>
+      </div>
+  }
+</div>

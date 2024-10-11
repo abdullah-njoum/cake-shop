@@ -3,7 +3,7 @@ import { Component, HostListener, OnInit, output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { MOBILE_WIDTH } from '../../shared/utils/constants';
+import { ICONS_PATH, MOBILE_WIDTH } from '../../shared/utils/constants';
 import { NavigationService } from '../../shared/services/navigation.service';
 import { Recipe } from '../../shared/models/recipe.model';
 
@@ -18,6 +18,7 @@ import { Recipe } from '../../shared/models/recipe.model';
 export class AppHeaderComponent implements OnInit {
  menuOpenedEmitter = output<boolean>();
 
+  cakeIcon = `${ICONS_PATH}/cake-icon.avif`;
   userProfileIcon = faUser;
   cartShoppingIcon = faCartShopping; 
   searchIcon = faSearch;

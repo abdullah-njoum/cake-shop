@@ -1,7 +1,18 @@
-<app-header (menuOpenedEmitter)="toggleSideBar()"></app-header>
+<header>
+    <app-header (menuOpenedEmitter)="toggleSideBar()"></app-header>
+</header>
 @if(sideBarOpened) {
-    <app-side-bar (sideBarClosed)="toggleSideBar()"></app-side-bar>
-    <div class="backdrop" (click)="toggleSideBar()"></div>
+    <nav>
+        <app-side-bar (sideBarClosed)="toggleSideBar()"></app-side-bar>
+        <div class="backdrop" (click)="toggleSideBar()"></div>
+    </nav>
 }
-<app-content></app-content>
-<app-footer></app-footer>
+<main>
+    <app-content></app-content>
+</main>
+<footer>
+    <app-footer></app-footer>
+</footer>
+@if(upButtonActivated) {
+    <span class="up-icon" (click)="upIconClicked()"><fa-icon [icon]="arrowUpIcon"></fa-icon></span>
+}

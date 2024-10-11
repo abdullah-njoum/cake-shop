@@ -1,16 +1,17 @@
-header {
+@import 'variables';
+
+.container {
     padding: .5rem;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #e57a7a;
+    background-color: $watermelon;
     color: white;
     text-transform: uppercase;
     outline: .1rem dashed white;
     outline-offset: -.35rem;
-    margin-top: 3rem;
 }
 .icon {
     position: relative;
@@ -21,7 +22,7 @@ header {
     }
 }
 .nav ul li:hover {
-    color: #78d6f0;
+    color: $babyblue;
     cursor: pointer;
 }
 .menu-button {
@@ -53,7 +54,7 @@ ul li {
     list-style-type: none;
 }
 .functions .currency {
-    background-color: #eb9494;
+    background-color: $watermelon;
     color: white;
 }
 .functions .cartIcon {
@@ -98,6 +99,9 @@ ul li {
             img {
                 max-width: 100%;
             }
+            .category-data:hover {
+                color: $babyblue;
+            }
         }
         .category-title {
             border-bottom: 1px solid grey;
@@ -129,12 +133,18 @@ ul li {
             img {
                 max-width: 100%;
             }
-            button {
+            .recipe-button {
                 white-space: nowrap;
                 padding: 0.3rem;
-                background-color: #e57a7a;
+                background-color: $watermelon;
                 color: white;
+                cursor: pointer;
                 border: none;
+                &:hover {
+                    background-color: $babyblue;
+                    color: $watermelon;
+                    border: 1px solid $babyblue;
+                }
             }
         }
     }

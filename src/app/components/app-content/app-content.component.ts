@@ -1,45 +1,23 @@
 import { Component } from '@angular/core';
-import { SLIDE_IMAGES_PATH } from '../../shared/utils/constants';
-import { PagesHeaderComponent } from './pages-header/pages-header.component';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CommonModule } from '@angular/common';
+import { ImagesSliderComponent } from './images-slider/images-slider.component';
+import { CakesDescriptionComponent } from './cakes-description/cakes-description.component';
+import { PopularCreationsComponent } from './popular-creations/popular-creations.component';
+import { BestDealsComponent } from './best-deals/best-deals.component';
+import { LayerCakesComponent } from "./layer-cakes/layer-cakes.component";
 
-const SLIDER_IMAGES_COUNT = 3; 
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [PagesHeaderComponent, FontAwesomeModule, CommonModule],
+  imports: [
+    ImagesSliderComponent,
+    CakesDescriptionComponent,
+    PopularCreationsComponent,
+    BestDealsComponent,
+    LayerCakesComponent
+],
   templateUrl: './app-content.component.html',
   styleUrl: './app-content.component.scss'
 })
 export class AppContentComponent {
-  prevIcon = faAngleLeft;
-  nextIcon = faAngleRight;
-  currentSlide = 'slide_1';
-  imgSrc: string = `${SLIDE_IMAGES_PATH}/${this.currentSlide}.jpg`;
 
-  nextClick(): void {
-    if (+this.currentSlide[this.currentSlide.length - 1] + 1 > SLIDER_IMAGES_COUNT)
-      this.currentSlide = this.currentSlide.slice(0, this.currentSlide.length - 1) + 0;
-
-    this.currentSlide = this.currentSlide.slice(
-      0, this.currentSlide.length - 1
-    ) + (+this.currentSlide[this.currentSlide.length - 1] + 1);
-    this.updateImageSrc();
-  }
-
-  prevClick(): void {
-    if (+this.currentSlide[this.currentSlide.length - 1] === 1)
-        this.currentSlide = this.currentSlide.slice(0, this.currentSlide.length - 1) + (SLIDER_IMAGES_COUNT + 1);
-  
-    this.currentSlide = this.currentSlide.slice(
-      0, this.currentSlide.length - 1
-    ) + (+this.currentSlide[this.currentSlide.length - 1] - 1);
-    this.updateImageSrc();
-  }
-
-  private updateImageSrc(): void {
-    this.imgSrc = `${SLIDE_IMAGES_PATH}/${this.currentSlide}.jpg`;
-  }
 }

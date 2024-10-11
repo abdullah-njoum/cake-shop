@@ -34,7 +34,7 @@
         </div>
     }
     <div class="category">
-        <img src="/assets/images/shop-image.jpg" alt="Coffee and Cake" />
+        <img src="/assets/images/shop-image.jpg" alt="Coffee and Cake Image" loading="lazy"/>
     </div>
 </ng-template>
 
@@ -42,7 +42,7 @@
     <div class="container-title">Recipes</div>
     @for(recipe of recipes; track recipe; let i = $index) {
     <div class="recipe-container">
-        <img [src]="recipe.imgSrc" [alt]="'recipe' + i" />
+        <img [src]="recipe.imgSrc" [alt]="'Recipe Image' + (i+1)" loading="lazy"/>
         <button>{{ recipe.name }} - {{ recipe.price }}</button>
     </div>
     }

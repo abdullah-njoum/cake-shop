@@ -1,0 +1,82 @@
+@import 'variables';
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .image-wrapper {
+        width: 40%;
+        img {
+            max-width: 100%;
+            min-width: 100%;
+            object-fit: cover;
+        }
+    }
+    .card-details {
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        gap: 1.6rem;
+        align-items: flex-start;
+        .title {
+            font-size: 2rem;
+            color: $babyblue;
+            transition: color .5s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                color: $watermelon;
+            }
+        }
+        .price {
+            font-size: 2rem;
+            color: $watermelon;
+            font-weight: bold;
+        }
+        .type, .vendor {
+            display: flex;
+            width: 100%;
+            gap: 4rem;
+            align-items: center;
+            .key {
+                font-size: 1.2rem;
+                width: 30%;
+                text-align: start;
+            }
+        }
+        .button {
+            padding: .8rem 1.2rem;
+            font-size: .8rem;
+            background-color: $watermelon;
+            color: white;
+            border-radius: $button-border-radius;
+            @include button-hover;
+        }
+        .separator {
+            height: 2px;
+            width: 80%;
+            background-color: $grey;
+        }
+        .nav-buttons {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            .next-icon, .prev-icon {
+                border: 1px solid $watermelon;
+                border-radius: $button-border-radius;
+                color: $watermelon;
+                padding: $button-padding;
+                @include button-hover($watermelon);
+            }
+            .disabled {
+                opacity: .5;
+                cursor: not-allowed;
+                pointer-events: none;
+                &:hover {
+                    background-color: inherit;
+                    color: $watermelon;
+                }
+            }
+
+        }
+    }
+}

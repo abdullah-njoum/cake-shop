@@ -1,0 +1,17 @@
+<div class="container" [ngStyle]="{'background-image': 'url('+backgroundImage+')'}">
+  <div class="title">layer cakes</div>
+  <div class="title-img">
+    <img [src]="titleImage" alt="Title Icon" loading="lazy"/>
+  </div>
+  <div class="content">
+    <div class="categories-container">
+      @for(category of categories; track category; let i=$index) {
+        <div class="img-wrapper" [ngClass]="selectedCategoryId === (i+1) ? 'selected-category-' : ''">
+          <img class="icon-img"(click)="changeSelectedCategory(i+1)" [src]="category.iconSrc" [alt]="'Category' + i + 'Image'" loading="lazy"/>
+          <img class="bg-img" (click)="changeSelectedCategory(i+1)" [src]="category.bgSrc" [alt]="'Category' + i + 'Background Image'" loading="lazy"/>
+        </div>      
+      }
+    </div>
+    <app-layer-cake-card [ngClass]="'selected-category-' + selectedCategoryId" [categoryCards]="categoryCards"></app-layer-cake-card>
+  </div>
+</div>

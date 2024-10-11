@@ -1,0 +1,17 @@
+//Color
+$watermelon: #e57a7a;
+$babyblue: #78d6f0;
+$grey: rgba(0, 0, 0, 0.05);
+$border-color: rgb(193, 192, 192);
+$cold-green: #9fc58d;
+$button-border-radius: .3rem;
+$button-padding: .6rem .8rem;
+
+//Mixins
+@mixin button-hover($background-color: $babyblue, $color: white) {
+    transition: background-color .5s ease-in-out;
+    &:hover {
+        background-color: $background-color;
+        color: $color;
+    }
+}

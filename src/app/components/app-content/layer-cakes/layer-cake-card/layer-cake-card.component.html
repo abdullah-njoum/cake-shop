@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card-details">
+    <div class="title">{{ cardDetails.title }}</div>
+    <div class="price">{{ cardDetails.price | currency }}</div>
+    <div class="type">
+      <span class="key">Type:</span>
+      <span class="value">{{ cardDetails.type }}</span>
+    </div>
+    <div class="vendor">
+      <span class="key">Vendor:</span>
+      <span class="value">{{ cardDetails.vendor }}</span>
+    </div>
+    <div class="button"><fa-icon [icon]="cartShoppingIcon"></fa-icon> Add to Cart </div>
+    <div class="button"><fa-icon [icon]="heartIcon"></fa-icon> Add to Wishlist </div>
+    <div class="separator"></div>
+    <div class="nav-buttons">
+      <span class="prev-icon" [ngClass]="{ 'disabled': prevDisabled }" (click)="prevClicked()"><fa-icon [icon]="prevIcon"></fa-icon></span>
+      <span class="next-icon" [ngClass]="{ 'disabled': nextDisabled }" (click)="nextClicked()"><fa-icon [icon]="nextIcon"></fa-icon></span>
+    </div>
+  </div>
+  <div class="image-wrapper">
+    <img [src]="cardDetails.imgSrc" alt="Cake Card Image" loading="lazy"/>
+  </div>
+</div>

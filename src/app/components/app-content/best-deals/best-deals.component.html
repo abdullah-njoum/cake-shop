@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="title">best deals</div>
+  <div class="title-image">
+    <img [src]="titleImage" alt="title icon" loading="lazy"/>
+  </div>
+  <div class="products-container">
+    @for (product of allProducts; track product; let i=$index) {
+      <div class="product-card card-{{i+1}}">
+        <div class="image-wrapper">
+          @if (product.isSoldOut) {
+            <span class="sold-out">sold out</span>
+          }
+          <img [src]="product.iconSrc" [alt]="'Image for Product' + (i+1)" loading="lazy">
+          <div class="icons-wrapper">
+            <fa-icon [icon]="heartIcon"></fa-icon>
+            <fa-icon [icon]="searchIcon"></fa-icon>
+          </div>
+        </div>
+        <div class="product-title">{{ product.title }}</div>
+        <div class="price">{{ product.price | currency }}</div>
+        <button>Add to Cart</button>
+        @if(i === 2) {
+          <span class="icon-prev" [ngClass]="prevDisabled ? 'greyed-out' : 'not-greyed-out'" (click)="prevClick()"><fa-icon [icon]="prevIcon"></fa-icon></span>
+        }
+        @if(!mobileView ?  i === 4 : i === 3) {
+          <span class="icon-next" [ngClass]="nextDisabled ? 'greyed-out' : 'not-greyed-out'" (click)="nextClick()"><fa-icon [icon]="nextIcon"></fa-icon></span>
+        }
+      </div>
+    }
+  </div>
+</div>
