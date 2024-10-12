@@ -1,0 +1,77 @@
+@import 'variables';
+
+.container {
+    background-color: $babyblue;
+    padding: 7rem 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    align-items: center;
+    --mask: radial-gradient(26px at 50% 26px, #0000 97%, #000) 50% -26px/ 48.1px 100%;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+    .item-container {
+        width: max(15%, 12rem);
+        aspect-ratio: 1 / 1;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex: 0 0 auto;
+        transition: transform 0.5s ease-in-out;
+        &:hover {
+            transform: translateX(5%);
+        }
+        .icon {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                border: 1px solid $babyblue;
+                top: 50%;
+                left: -180%;
+                width: 150%;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                border: 1px solid $babyblue;
+                top: 50%;
+                right: -180%;
+                width: 150%;
+            }
+
+            fa-icon {
+                color: $babyblue;
+                font-size: 1.4rem;
+            }
+        }
+
+        .counter {
+            font-size: 2rem;
+            color: $babyblue;
+        }
+
+        .title {
+            color: $babyblue;
+            font-size: 1.2rem;
+            white-space: nowrap;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .item-container {
+        flex-basis: 45%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .item-container {
+        flex-basis: 95%;
+    }
+}

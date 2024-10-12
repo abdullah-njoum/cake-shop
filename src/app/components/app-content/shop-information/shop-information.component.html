@@ -1,0 +1,12 @@
+<div class="container">
+  @for(item of shopInfo; track item; let i=$index) {
+    <div class="item-container" 
+         (mouseenter)="updateHover(i+1, true)"
+         (mouseleave)="updateHover(i+1, false)"
+         [ngStyle]="{'background-image':  containerHovered[i+1] ? 'url('+starIcon+')' : 'none' }">
+      <span class="counter">{{ item.counter }}</span>
+      <span class="icon"><fa-icon [icon]="giftIcon"></fa-icon></span>
+      <span class="title">{{ item.title }}</span>
+    </div>
+  }
+</div>
