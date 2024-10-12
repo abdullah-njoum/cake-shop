@@ -10,7 +10,7 @@
           @if (product.isSoldOut) {
             <span class="sold-out">sold out</span>
           }
-          <img [src]="product.iconSrc" [alt]="'Image for Product' + (i+1)" loading="lazy">
+          <img [src]="product.imgSrc" [alt]="'Image for Product' + (i+1)" loading="lazy">
           <div class="icons-wrapper">
             <fa-icon [icon]="heartIcon"></fa-icon>
             <fa-icon [icon]="searchIcon"></fa-icon>

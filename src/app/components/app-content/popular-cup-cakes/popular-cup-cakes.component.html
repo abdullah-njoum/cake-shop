@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="title">popular cupcake flavors</div>
+  <div class="title-img">
+    <img [src]="titleImage" alt="Title Icon" loading="lazy"/>
+  </div>
+  <div class="items-container">
+    @for(item of cakes; track item; let i=$index) {
+      <div class="item-container" [ngStyle]="{'background-color': item.backgroundColor, 'background-image': 'url('+item.backgroundImgSrc+')'}">
+        <div class="img-container">
+          <img [src]="item.imgSrc" [alt]="'Popular Cup Cake '+ (i+1)" loading="lazy"/>
+        </div>
+        <span class="item-title">{{ item.title }}</span>
+        <span class="item-price">{{ item.price | currency }}</span>
+    </div>
+    }
+  </div>
+</div>

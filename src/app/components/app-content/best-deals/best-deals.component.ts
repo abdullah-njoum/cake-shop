@@ -17,7 +17,7 @@ export class BestDealsComponent implements OnInit {
   nextIcon = faAngleRight;
   heartIcon = faHeart;
   searchIcon = faSearch;
-  titleImage = `${BEST_DEALS_IMAGES_PATH}/title_image.png`;
+  titleImage = `${BEST_DEALS_IMAGES_PATH}/title-image.png`;
   mainProducts: BestDeals[] = []; 
   dynamicProducts: BestDeals[] = [];
   allProducts: BestDeals[] = [];
@@ -48,12 +48,12 @@ export class BestDealsComponent implements OnInit {
 
     this.mainProducts = [
       {
-        iconSrc: `${BEST_DEALS_IMAGES_PATH}/product1.jpg`,
+        imgSrc: `${BEST_DEALS_IMAGES_PATH}/product1.jpg`,
         title: 'Family Donald Cake',
         price: 200
       },
       {
-        iconSrc: `${BEST_DEALS_IMAGES_PATH}/product2.jpg`,
+        imgSrc: `${BEST_DEALS_IMAGES_PATH}/product2.jpg`,
         title: 'Jewelled Fruit Cake',
         price: 170
       }
@@ -61,27 +61,27 @@ export class BestDealsComponent implements OnInit {
 
     this.dynamicProducts = [
       {
-        iconSrc: `${BEST_DEALS_IMAGES_PATH}/product3.jpg`,
+        imgSrc: `${BEST_DEALS_IMAGES_PATH}/product3.jpg`,
         title: 'Valentine\'s Day Cup Cake',
         price: 200
       },
       {
-        iconSrc: `${BEST_DEALS_IMAGES_PATH}/product2.jpg`,
+        imgSrc: `${BEST_DEALS_IMAGES_PATH}/product2.jpg`,
         title: 'Jewelled Fruit Cake',
         price: 170
       },
       {
-        iconSrc: `${BEST_DEALS_IMAGES_PATH}/product4.jpg`,
+        imgSrc: `${BEST_DEALS_IMAGES_PATH}/product4.jpg`,
         title: 'Day Fortunes Cake',
         price: 300
       },
       {
-        iconSrc: `${BEST_DEALS_IMAGES_PATH}/product5.jpg`,
+        imgSrc: `${BEST_DEALS_IMAGES_PATH}/product5.jpg`,
         title: 'Heartfelt Gift Basket',
         price: 120
       },
       {
-        iconSrc: `${BEST_DEALS_IMAGES_PATH}/product6.jpg`,
+        imgSrc: `${BEST_DEALS_IMAGES_PATH}/product6.jpg`,
         title: 'Sweet Cup Cake',
         price: 100,
         isSoldOut: true

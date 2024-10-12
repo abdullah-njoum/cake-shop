@@ -25,7 +25,7 @@ export class ImagesSliderComponent {
     this.currentSlide = this.currentSlide.slice(
       0, this.currentSlide.length - 1
     ) + (+this.currentSlide[this.currentSlide.length - 1] + 1);
-    this.updateImageSrc();
+    this.updateImgSrc();
   }
 
   prevClick(): void {
@@ -35,10 +35,10 @@ export class ImagesSliderComponent {
     this.currentSlide = this.currentSlide.slice(
       0, this.currentSlide.length - 1
     ) + (+this.currentSlide[this.currentSlide.length - 1] - 1);
-    this.updateImageSrc();
+    this.updateImgSrc();
   }
 
-  private updateImageSrc(): void {
+  private updateImgSrc(): void {
     this.imgSrc = `${SLIDE_IMAGES_PATH}/${this.currentSlide}.jpg`;
   }
 }

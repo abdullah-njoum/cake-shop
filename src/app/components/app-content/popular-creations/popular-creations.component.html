@@ -6,7 +6,7 @@
   <div class="creations-container">
     @for(creation of creationItems; track creation; let i=$index) {
       <div class="creation-item">
-        <img [src]="creation.iconSrc" [alt]="'Creation Item Image' + (i+1)" loading="lazy"/>
+        <img [src]="creation.imgSrc" [alt]="'Creation Item Image' + (i+1)" loading="lazy"/>
         <span class="creation-title">{{ creation.title }}</span>
         <p>{{ creation.description }}</p>
       </div>

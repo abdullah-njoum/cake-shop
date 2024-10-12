@@ -15,7 +15,7 @@ import { LayerCakeService } from '../../../shared/services/layer-cake.service';
   styleUrls: ['./layer-cakes.component.scss']
 })
 export class LayerCakesComponent implements OnInit {
-  titleImage = `${LAYER_CAKES_IMAGES_PATH}/title_image.png`;
+  titleImage = `${LAYER_CAKES_IMAGES_PATH}/title-image.png`;
   backgroundImage = `${LAYER_CAKES_IMAGES_PATH}/background.png`;
   categoryCards!: LayerCakeCard[];
   categories: LayerCakeCategory[] = [];
