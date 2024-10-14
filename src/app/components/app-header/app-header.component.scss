@@ -60,7 +60,7 @@ ul li {
 .functions .cartIcon {
     position: relative;
     &::after {
-        content: '0';
+        content: attr(cart-count);
         position: absolute;
         top: -.2rem;
         right: -.8rem;

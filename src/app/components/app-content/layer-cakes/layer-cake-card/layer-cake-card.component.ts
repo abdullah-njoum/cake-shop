@@ -4,6 +4,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faAngleLeft, faAngleRight, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { LayerCakeCard } from '../../../../shared/models/layer-cake-card.model';
 import { CommonModule } from '@angular/common';
+import { ShoppingCartService } from '../../../../shared/services/shopping-cart.service';
 
 @Component({
   selector: 'app-layer-cake-card',
@@ -22,6 +23,7 @@ export class LayerCakeCardComponent implements OnInit {
   currentCardIndex = 0;
   prevDisabled = true;
   nextDisabled = false;
+  addToCart = this.cartService.addToCart.bind(this.cartService);
 
   ngOnInit() {
     this.updateCurrentCardDetails();
@@ -49,7 +51,7 @@ export class LayerCakeCardComponent implements OnInit {
     this.cardDetails = this.categoryCards()[this.currentCardIndex];
   }
 
-  constructor() {
+  constructor(private readonly cartService: ShoppingCartService) {
     effect(() => {
       this.currentCardIndex = 0;
       this.nextDisabled = false;

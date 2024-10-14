@@ -18,7 +18,7 @@
         </div>
         <div class="product-title">{{ product.title }}</div>
         <div class="price">{{ product.price | currency }}</div>
-        <button>Add to Cart</button>
+        <button (click)="addToCart(product)">Add to Cart</button>
         @if(i === 2) {
           <span class="icon-prev" [ngClass]="prevDisabled ? 'greyed-out' : 'not-greyed-out'" (click)="prevClick()"><fa-icon [icon]="prevIcon"></fa-icon></span>
         }

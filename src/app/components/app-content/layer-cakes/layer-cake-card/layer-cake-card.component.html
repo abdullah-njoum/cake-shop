@@ -10,7 +10,7 @@
       <span class="key">Vendor:</span>
       <span class="value">{{ cardDetails.vendor }}</span>
     </div>
-    <div class="button"><fa-icon [icon]="cartShoppingIcon"></fa-icon> Add to Cart </div>
+    <div class="button" (click)="addToCart(cardDetails)"><fa-icon [icon]="cartShoppingIcon"></fa-icon> Add to Cart </div>
     <div class="button"><fa-icon [icon]="heartIcon"></fa-icon> Add to Wishlist </div>
     <div class="separator"></div>
     <div class="nav-buttons">

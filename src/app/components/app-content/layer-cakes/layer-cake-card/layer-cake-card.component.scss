@@ -49,6 +49,7 @@
             background-color: $watermelon;
             color: white;
             border-radius: $button-border-radius;
+            cursor: pointer;
             @include button-hover;
         }
         .separator {

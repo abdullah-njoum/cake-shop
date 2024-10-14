@@ -4,6 +4,7 @@ import { BEST_DEALS_IMAGES_PATH, MOBILE_WIDTH } from '../../../shared/utils/cons
 import { CommonModule } from '@angular/common';
 import { faAngleLeft, faAngleRight, faHeart, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShoppingCartService } from '../../../shared/services/shopping-cart.service';
 const DYNAMIC_PRODUCTS_MAX = 3;
 @Component({
   selector: 'app-best-deals',
@@ -26,6 +27,7 @@ export class BestDealsComponent implements OnInit {
   nextDisabled = false;
   prevDisabled = true;
   mobileView = false;
+  addToCart = this.cartService.addToCart.bind(this.cartService);
 
   @HostListener('window:resize')
   onResize() {
@@ -111,4 +113,6 @@ export class BestDealsComponent implements OnInit {
   private updateProducts(): void {
     this.allProducts = [...this.mainProducts, ...this.dynamicProducts.slice(this.startIndex, this.endIndex)];
   }
+
+  constructor(private readonly cartService: ShoppingCartService) {}
 }

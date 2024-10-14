@@ -6,4 +6,5 @@ export const POPULAR_CREATIONS_IMAGES_PATH =`${IMAGES_PATH}/popular-creations`;
 export const BEST_DEALS_IMAGES_PATH =`${IMAGES_PATH}/best-deals`;
 export const LAYER_CAKES_IMAGES_PATH =`${IMAGES_PATH}/layer-cakes`;
 export const POPULAR_CUPCAKES_IMAGES_PATH =`${IMAGES_PATH}/popular-cup-cakes`;
+export const FOOTER_IMAGES_PATH =`${IMAGES_PATH}/footer`;
 export const MOBILE_WIDTH = 1025;

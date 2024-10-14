@@ -1,1 +1,62 @@
-<p>app-footer works!</p>
+<app-newsletter></app-newsletter>
+<div class="container" [ngStyle]="{ 'background-image': 'url(' + backgroundImg + ')' }">
+    <div class="intro item-container">
+        <div><img [src]="introImg" alt="Footer Intro Image" loading="lazy" /></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ovoluptatibus quisquam voluptas obcaecati eos
+            possimus.</p>
+    </div>
+    <div class="meals item-container">
+        <div class="title">shop by time</div>
+        <div class="meals-buttons">
+            <button>Breakfast</button>
+            <button>Lunch</button>
+            <button>Dinner</button>
+            <button>Deserts</button>
+            <button>Drinks</button>
+            <button>Coffee</button>
+        </div>
+    </div>
+    <div class="opening-hours item-container">
+        <div class="title">opening hours</div>
+        <div class="day-time">
+            <span class="bold">Sunday</span>
+            <span>2 noon to 22 pm</span>
+        </div>
+        <div class="day-time">
+            <span class="bold">Mon - Thu</span>
+            <span>10 am to 22 pm</span>
+        </div>
+        <div class="day-time">
+            <span class="bold">Fri - Sat</span>
+            <span>9 am to 20 pm</span>
+        </div>
+        <div class="gloria-font-title">Happy Hours</div>
+        <div class="discount-cakes">Enjoy Discount Cakes</div>
+        <div>Every Friday 12 noon - 2pm this Festeval month only.</div>
+    </div>
+    <div class="contact-us item-container">
+        <div class="title">contact us</div>
+        <ul>
+            <li class="home">
+                <span><fa-icon [icon]="homeIcon"></fa-icon></span>
+                <span>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</span>
+            </li>
+            <li class="phone">
+                <span><fa-icon [icon]="phoneIcon"></fa-icon></span>
+                <span><a href="tel:+49123456789">Contact no: 0000 - 123 - 456789</a></span>
+            </li>
+            <li class="email">
+                <span><fa-icon [icon]="envelopIcon"></fa-icon></span>
+                <span><a href="mailto:info@example.com">info&#64;example.com</a></span>
+            </li>
+    
+        </ul>
+        <div class="gloria-font-title">Follow Us</div>
+        <div class="social-media">
+            <fa-icon [icon]="facebookIcon"></fa-icon>
+            <fa-icon [icon]="twitterIcon"></fa-icon>
+            <fa-icon [icon]="instagramIcon"></fa-icon>
+        </div>
+    </div>
+</div>
+<div class="copyright">© 2024 Cake Shop - All Right Reserved</div>

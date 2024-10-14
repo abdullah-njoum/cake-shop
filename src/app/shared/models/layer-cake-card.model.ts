@@ -1,8 +1,8 @@
-export interface LayerCakeCard {
-    title: string;
+import { Product } from "./product.model";
+
+export interface LayerCakeCard extends Product {
     price: number;
     type: string;
     vendor: string;
-    imgSrc: string;
     categoryId: number;
 }

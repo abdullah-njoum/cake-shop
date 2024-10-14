@@ -38,7 +38,7 @@
     <div class="functions">
         <ul>
             <li><a><fa-icon [icon]="userProfileIcon"></fa-icon></a></li>
-            <li><a><fa-icon class="cartIcon" [icon]="cartShoppingIcon"></fa-icon></a></li>
+            <li><a><fa-icon [attr.cart-count]="cartCount().toString()" class="cartIcon" [icon]="cartShoppingIcon"></fa-icon></a></li>
             <li><a><fa-icon [icon]="searchIcon"></fa-icon></a></li>
             <li>
                 <select class="currency" name="currency" id="currency">

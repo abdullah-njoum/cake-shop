@@ -1,0 +1,48 @@
+@import 'variables';
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-block: 8rem; 
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    --mask: conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50%/18px 100%;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-position: center;
+    background-size: cover;
+
+    .title {
+        font-family: "Marck Script", cursive;
+        font-size: 2.5rem;
+    }
+    .paragraph {
+        text-align: center;
+        width: 50%;
+    }
+    .email {
+        width: 35%;
+        input {
+            width: 65%;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: .8rem;
+        }
+        button {
+            text-align: center;
+            background-color: $babyblue;
+            color: white;
+            border: none;
+            padding: .8rem;
+            margin-left: .8rem;
+            @include button-hover($watermelon);
+            fa-icon {
+                color: white;
+                margin-left: .5rem;
+            }
+        }
+    }
+}
