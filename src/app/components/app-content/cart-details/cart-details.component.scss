@@ -1,0 +1,46 @@
+@import 'variables';
+
+.container {
+    padding: 5rem;
+
+    .items-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        .item-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            img {
+                max-width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+
+    .no-items {
+        font-family: "Marck Script", cursive;
+        font-size: 3rem;
+        color: $watermelon;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        .items-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .items-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

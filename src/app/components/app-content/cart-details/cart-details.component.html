@@ -1,3 +1,21 @@
-<p>
-  cart-details works!
-</p>
+<div class="container">
+  @if(cartItems.length) {
+
+  <div class="items-container">
+    @for(item of cartItems; track item; let i=$index) {
+    <div class="item-container">
+      <img [src]="item.imgSrc" [alt]="'Cart Product Number'+i" loading="lazy" />
+      <div>{{ item.price }}</div>
+      <div>{{ item.title }}</div>
+    </div>
+    }
+  </div>
+  }
+  @else {
+  <ng-container *ngTemplateOutlet="noItems"></ng-container>
+  }
+</div>
+
+<ng-template #noItems>
+  <div class="no-items">No Items Selected</div>
+</ng-template>
