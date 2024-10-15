@@ -1,0 +1,17 @@
+@import 'variables';
+
+.container {
+    text-align: center;
+    padding: 5rem;
+    span {
+        font-family: "Marck Script", cursive;
+        font-size: 3rem;
+    }
+    a {
+        text-decoration: none;
+        color: unset;
+        &:hover {
+            color: $watermelon;
+        }
+    }
+}
