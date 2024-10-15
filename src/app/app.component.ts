@@ -6,6 +6,7 @@ import { AppContentComponent } from './components/app-content/app-content.compon
 import { AppSideBarComponent } from './components/app-side-bar/app-side-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { MOBILE_WIDTH } from './shared/utils/constants';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,12 @@ export class AppComponent {
     } else if (window.scrollY < (window.document.scrollingElement!.scrollHeight/8) && this.upButtonActivated){
       this.upButtonActivated = false;
     }
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth > MOBILE_WIDTH && this.sideBarOpened)
+      this.sideBarOpened = false;
   }
 
   toggleSideBar(): void {
