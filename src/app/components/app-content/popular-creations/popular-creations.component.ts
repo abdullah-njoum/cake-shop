@@ -19,22 +19,26 @@ export class PopularCreationsComponent implements OnInit {
       {
         imgSrc: `${POPULAR_CREATIONS_IMAGES_PATH}/product1.jpg`,
         title: 'Celebration Cake',
-        description: 'Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam.'
+        description: 'Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam.',
+        price: 100
       },
       {
         imgSrc: `${POPULAR_CREATIONS_IMAGES_PATH}/product2.jpg`,
         title: 'More Cakes',
-        description: 'Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo.'
+        description: 'Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo.',
+        price: 150
       },
       {
         imgSrc: `${POPULAR_CREATIONS_IMAGES_PATH}/product3.jpg`,
         title: 'Ready Cake',
-        description: 'Lacus sed viverra tellus in hac. In dictum non consectetur a erat nam at.'
+        description: 'Lacus sed viverra tellus in hac. In dictum non consectetur a erat nam at.',
+        price: 75
       },
       {
         imgSrc: `${POPULAR_CREATIONS_IMAGES_PATH}/product4.jpg`,
         title: 'Sweet Cake',
-        description: 'Sed arcu non odio euismod lacinia at quis. Luctus accumsan tortor posuere ac.'
+        description: 'Sed arcu non odio euismod lacinia at quis. Luctus accumsan tortor posuere ac.',
+        price: 50
       }
     ];
   }

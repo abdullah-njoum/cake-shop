@@ -8,6 +8,15 @@
     top: 0;
     z-index: 100;
     background-color: white;
+    a {
+        text-decoration: none;
+        &:hover {
+            color: $watermelon;
+        }
+        &:visited, &:active {
+            color: inherit;
+        }
+    }
 }
 
 .shop-container,
@@ -66,9 +75,15 @@
     border-bottom: 1px solid $border-color;
     .icon-close {
         margin-left: auto;
+        &:hover {
+            color: $babyblue;
+        }
     }
     .icon-back {
         margin-right: auto;
+        &:hover {
+            color: $babyblue;
+        }
     }
 }
 

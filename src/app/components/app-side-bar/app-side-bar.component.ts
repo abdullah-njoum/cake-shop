@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faX } from '@fortawesome/free-solid-svg-icons';
-import { NavigationService } from '../../shared/services/navigation.service';
+import { NavigationDataService } from '../../shared/services/navigation-data.service';
 import { Recipe } from '../../shared/models/recipe.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
-  providers: [NavigationService],
+  imports: [CommonModule, FontAwesomeModule, RouterLink],
   templateUrl: './app-side-bar.component.html',
   styleUrl: './app-side-bar.component.scss'
 })
@@ -23,8 +23,8 @@ export class AppSideBarComponent implements OnInit {
   categories: string[] = [];
 
   ngOnInit(): void {
-    this.recipes = this.navigationService.getRecipes();      
-    this.categoriesData = this.navigationService.getShopData() as Record<string, string[]>;
+    this.recipes = this.navigationDataService.getRecipes();      
+    this.categoriesData = this.navigationDataService.getShopData() as Record<string, string[]>;
     this.categories = Object.keys(this.categoriesData);
   }
 
@@ -33,5 +33,5 @@ export class AppSideBarComponent implements OnInit {
     else this.activeTemplate = null;
   }
 
-  constructor(private readonly navigationService: NavigationService) {}
+  constructor(private readonly navigationDataService: NavigationDataService) {}
 }

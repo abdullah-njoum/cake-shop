@@ -3,6 +3,7 @@ import { ICONS_PATH } from '../../../shared/utils/constants';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Product } from '../../../shared/models/product.model';
+import { Category } from '../../../shared/models/category.model';
 
 @Component({
   selector: 'app-cakes-description',
@@ -12,7 +13,7 @@ import { Product } from '../../../shared/models/product.model';
   styleUrls: ['./cakes-description.component.scss']
 })
 export class CakesDescriptionComponent implements OnInit {
-  cakesDesc: Product[] = [];
+  cakesDesc: Category[] = [];
   cakeIconWrapper = `${ICONS_PATH}/cakes_description_icon_wrapper.png`;
   
   ngOnInit(): void {

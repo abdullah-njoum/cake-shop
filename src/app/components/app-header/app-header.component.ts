@@ -4,15 +4,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Recipe } from '../../shared/models/recipe.model';
-import { NavigationService } from '../../shared/services/navigation.service';
 import { ShoppingCartService } from '../../shared/services/shopping-cart.service';
 import { ICONS_PATH, MOBILE_WIDTH } from '../../shared/utils/constants';
+import { RouterLink } from '@angular/router';
+import { NavigationDataService } from '../../shared/services/navigation-data.service';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FontAwesomeModule, CommonModule, RouterLink],
   templateUrl: './app-header.component.html',
   styleUrl: './app-header.component.scss'
 })
@@ -39,8 +40,8 @@ export class AppHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.mobileView = window.innerWidth <= MOBILE_WIDTH;
-    this.recipes = this.navigationService.getRecipes();
-    this.categoriesData = this.navigationService.getShopData() as Record<string, string[]>;
+    this.recipes = this.navigationDataService.getRecipes();
+    this.categoriesData = this.navigationDataService.getShopData() as Record<string, string[]>;
     this.categories = Object.keys(this.categoriesData).map(key => key);
   }
 
@@ -58,7 +59,7 @@ export class AppHeaderComponent implements OnInit {
   }
 
   constructor(
-    private readonly navigationService: NavigationService,
+    private readonly navigationDataService: NavigationDataService,
     private readonly cartService: ShoppingCartService
   ) {
     this.cartCount = this.cartService.getCartSignal();
