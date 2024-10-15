@@ -6,6 +6,7 @@ import { BestDealsComponent } from './best-deals/best-deals.component';
 import { LayerCakesComponent } from "./layer-cakes/layer-cakes.component";
 import { ShopInformationComponent } from './shop-information/shop-information.component';
 import { PopularCupCakesComponent } from "./popular-cup-cakes/popular-cup-cakes.component";
+import { NewsletterComponent } from "./newsletter/newsletter.component";
 
 @Component({
   selector: 'app-content',
@@ -17,7 +18,8 @@ import { PopularCupCakesComponent } from "./popular-cup-cakes/popular-cup-cakes.
     BestDealsComponent,
     LayerCakesComponent,
     ShopInformationComponent,
-    PopularCupCakesComponent
+    PopularCupCakesComponent,
+    NewsletterComponent
 ],
   templateUrl: './app-content.component.html',
   styleUrl: './app-content.component.scss'

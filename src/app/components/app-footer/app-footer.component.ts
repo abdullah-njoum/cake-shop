@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NewsletterComponent } from './newsletter/newsletter.component';
 import { FOOTER_IMAGES_PATH } from '../../shared/utils/constants';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,7 +9,7 @@ import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [NewsletterComponent, CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './app-footer.component.html',
   styleUrl: './app-footer.component.scss'
 })
